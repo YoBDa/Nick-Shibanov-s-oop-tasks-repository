@@ -20,8 +20,7 @@ namespace First_lesson_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tbDenominator3.Text = "";
-            tbNumerator3.Text = "";
+            tbFraction.Text = "";
             int Numerator1 = 0;
             int Numerator2 = 0;
             int Denominator1 = 0;
@@ -51,8 +50,7 @@ namespace First_lesson_app
                 Frac f1 = new Frac(Numerator1, Denominator1);
                 Frac f2 = new Frac(Numerator2, Denominator2);
                 Frac f3 = f1 + f2;
-                tbDenominator3.Text = f3.Denominator.ToString();
-                tbNumerator3.Text = f3.Numerator.ToString();
+                tbFraction.Text = f3.ToString();
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -62,8 +60,7 @@ namespace First_lesson_app
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tbDenominator3.Text = "";
-            tbNumerator3.Text = "";
+            tbFraction.Text = "";
             int Numerator1 = 0;
             int Numerator2 = 0;
             int Denominator1 = 0;
@@ -93,8 +90,7 @@ namespace First_lesson_app
                 Frac f1 = new Frac(Numerator1, Denominator1);
                 Frac f2 = new Frac(Numerator2, Denominator2);
                 Frac f3 = f1 * f2;
-                tbDenominator3.Text = f3.Denominator.ToString();
-                tbNumerator3.Text = f3.Numerator.ToString();
+                tbFraction.Text = f3.ToString();
             }
             catch (Exception ex)
             {
@@ -105,8 +101,7 @@ namespace First_lesson_app
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tbDenominator3.Text = "";
-            tbNumerator3.Text = "";
+            tbFraction.Text = "";
             int Numerator1 = 0;
             int Numerator2 = 0;
             int Denominator1 = 0;
@@ -136,8 +131,7 @@ namespace First_lesson_app
                 Frac f1 = new Frac(Numerator1, Denominator1);
                 Frac f2 = new Frac(Numerator2, Denominator2);
                 Frac f3 = f1-f2;
-                tbDenominator3.Text = f3.Denominator.ToString();
-                tbNumerator3.Text = f3.Numerator.ToString();
+                tbFraction.Text = f3.ToString();
             }
             catch (Exception ex)
             {
@@ -147,8 +141,7 @@ namespace First_lesson_app
 
         private void button4_Click(object sender, EventArgs e)
         {
-            tbDenominator3.Text = "";
-            tbNumerator3.Text = "";
+            tbFraction.Text = "";
             int Numerator1 = 0;
             int Numerator2 = 0;
             int Denominator1 = 0;
@@ -178,8 +171,7 @@ namespace First_lesson_app
                 Frac f1 = new Frac(Numerator1, Denominator1);
                 Frac f2 = new Frac(Numerator2, Denominator2);
                 Frac f3 = f1 / f2;
-                tbDenominator3.Text = f3.Denominator.ToString();
-                tbNumerator3.Text = f3.Numerator.ToString();
+                tbFraction.Text = f3.ToString();
             }
             catch (Exception ex)
             {

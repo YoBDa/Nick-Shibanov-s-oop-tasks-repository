@@ -61,6 +61,9 @@ namespace First_lesson_app
         
         public static Frac operator -(Frac f1, Frac f2) 
             =>Reduce((f1 + new Frac(-f2.Numerator, f2.Denominator)));
+        public override string ToString()
+            => $"{this.Numerator}/{this.Denominator}";
+
 
     }
 }

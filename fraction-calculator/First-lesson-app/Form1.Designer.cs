@@ -32,8 +32,7 @@
             this.tbDenominator1 = new System.Windows.Forms.TextBox();
             this.tbDenominator2 = new System.Windows.Forms.TextBox();
             this.tbNumerator2 = new System.Windows.Forms.TextBox();
-            this.tbDenominator3 = new System.Windows.Forms.TextBox();
-            this.tbNumerator3 = new System.Windows.Forms.TextBox();
+            this.tbFraction = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,19 +68,12 @@
             this.tbNumerator2.Size = new System.Drawing.Size(38, 23);
             this.tbNumerator2.TabIndex = 2;
             // 
-            // tbDenominator3
+            // tbFraction
             // 
-            this.tbDenominator3.Location = new System.Drawing.Point(232, 52);
-            this.tbDenominator3.Name = "tbDenominator3";
-            this.tbDenominator3.Size = new System.Drawing.Size(38, 23);
-            this.tbDenominator3.TabIndex = 5;
-            // 
-            // tbNumerator3
-            // 
-            this.tbNumerator3.Location = new System.Drawing.Point(232, 13);
-            this.tbNumerator3.Name = "tbNumerator3";
-            this.tbNumerator3.Size = new System.Drawing.Size(38, 23);
-            this.tbNumerator3.TabIndex = 4;
+            this.tbFraction.Location = new System.Drawing.Point(223, 33);
+            this.tbFraction.Name = "tbFraction";
+            this.tbFraction.Size = new System.Drawing.Size(59, 23);
+            this.tbFraction.TabIndex = 4;
             // 
             // button1
             // 
@@ -143,8 +135,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbDenominator3);
-            this.Controls.Add(this.tbNumerator3);
+            this.Controls.Add(this.tbFraction);
             this.Controls.Add(this.tbDenominator2);
             this.Controls.Add(this.tbNumerator2);
             this.Controls.Add(this.tbDenominator1);
@@ -164,8 +155,7 @@
         private System.Windows.Forms.TextBox tbDenominator1;
         private System.Windows.Forms.TextBox tbDenominator2;
         private System.Windows.Forms.TextBox tbNumerator2;
-        private System.Windows.Forms.TextBox tbDenominator3;
-        private System.Windows.Forms.TextBox tbNumerator3;
+        private System.Windows.Forms.TextBox tbFraction;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
