@@ -8,3 +8,13 @@ C:\Users\Nick\source\repos\First-lesson-app\First-lesson-app\obj\Debug\First-les
 C:\Users\Nick\source\repos\First-lesson-app\First-lesson-app\obj\Debug\First-lesson-app.csproj.CoreCompileInputs.cache
 C:\Users\Nick\source\repos\First-lesson-app\First-lesson-app\obj\Debug\First-lesson-app.exe
 C:\Users\Nick\source\repos\First-lesson-app\First-lesson-app\obj\Debug\First-lesson-app.pdb
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\bin\Debug\First-lesson-app.exe.config
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\bin\Debug\First-lesson-app.exe
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\bin\Debug\First-lesson-app.pdb
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First-lesson-app.csprojAssemblyReference.cache
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First_lesson_app.Form1.resources
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First_lesson_app.Properties.Resources.resources
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First-lesson-app.csproj.GenerateResource.cache
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First-lesson-app.csproj.CoreCompileInputs.cache
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First-lesson-app.exe
+D:\Projects\oop-tasks-repository\fraction-calculator\First-lesson-app\obj\Debug\First-lesson-app.pdb
