@@ -1,2 +1,2 @@
 # oop-tasks-repository
-Repo belongs Nick Shibanov
+This repo belongs Nick Shibanov.
