@@ -9,27 +9,31 @@ namespace Graphics_Task1
 {
     public class oRectangle : oShape
     {
-        public override Point Centre { get; set; }
-        public override Point Size { get; set; }
-        public override Color Color { get; set; }
         public oRectangle(Point Centre, Point Size, Color Color)
         {
-            if (Centre == Point.Empty ||Size == Point.Empty) throw EmptyPointFoundException;
-            this.Centre = Centre;
+            //if (Centre == Point.Empty || Size == Point.Empty) throw EmptyPointFoundException;
             this.Size = Size;
-            this.Peaks[0] = new Point((int)(Centre.X - Size.X / 2), (int)(Centre.Y - Size.Y / 2));
-            this.Peaks[1] = new Point((int)(Centre.X + Size.X / 2), (int)(Centre.Y - Size.Y / 2));
-            this.Peaks[2] = new Point((int)(Centre.X + Size.X / 2), (int)(Centre.Y + Size.Y / 2));
-            this.Peaks[3] = new Point((int)(Centre.X - Size.X / 2), (int)(Centre.Y + Size.Y / 2));
+            this.Centre = Centre;
             this.Color = Color;
+        }
+        public oRectangle(Point[] peaks, Color Color)
+        {
+            this.Color = Color;
+            int TLX = peaks[0].X;
+            int TLY = peaks[0].Y;
+            int BRX = peaks[2].X;
+            int BRY = peaks[2].Y;
+            int Length = (int)Math.Sqrt(Math.Pow(TLX - BRX, 2));
+            int Width = (int)Math.Sqrt(Math.Pow(TLY - BRY, 2));
+            this.Size = new Point(Length, Width);
+            this.Centre = new Point(peaks[0].X + Length / 2, peaks[0].Y + Width / 2);
+
         }
         public override void Draw(Graphics gr)
         {
-            gr.DrawRectangle(new Pen(Color), Peaks[0].X, Peaks[0].Y, Size.X, Size.Y);   
+            Brush br = new SolidBrush(Color);
+            gr.FillRectangle(br, Peaks[0].X, Peaks[0].Y, Size.X, Size.Y);   
         }
-        public override string Move(Point To)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
