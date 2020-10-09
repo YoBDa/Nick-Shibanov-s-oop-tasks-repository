@@ -33,6 +33,9 @@
             this.WoodRadio = new System.Windows.Forms.RadioButton();
             this.TrainRadio = new System.Windows.Forms.RadioButton();
             this.nudCartsCount = new System.Windows.Forms.NumericUpDown();
+            this.btLeft = new System.Windows.Forms.Button();
+            this.btRight = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,16 +103,49 @@
             0,
             0});
             // 
+            // btLeft
+            // 
+            this.btLeft.Location = new System.Drawing.Point(368, 12);
+            this.btLeft.Name = "btLeft";
+            this.btLeft.Size = new System.Drawing.Size(75, 23);
+            this.btLeft.TabIndex = 5;
+            this.btLeft.Text = "<-";
+            this.btLeft.UseVisualStyleBackColor = true;
+            this.btLeft.Click += new System.EventHandler(this.btLeft_Click);
+            // 
+            // btRight
+            // 
+            this.btRight.Location = new System.Drawing.Point(449, 12);
+            this.btRight.Name = "btRight";
+            this.btRight.Size = new System.Drawing.Size(75, 23);
+            this.btRight.TabIndex = 6;
+            this.btRight.Text = "->";
+            this.btRight.UseVisualStyleBackColor = true;
+            this.btRight.Click += new System.EventHandler(this.btRight_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(554, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 506);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btRight);
+            this.Controls.Add(this.btLeft);
             this.Controls.Add(this.nudCartsCount);
             this.Controls.Add(this.TrainRadio);
             this.Controls.Add(this.WoodRadio);
             this.Controls.Add(this.SandRadio);
             this.Controls.Add(this.CoalRadio);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
@@ -127,6 +163,9 @@
         private System.Windows.Forms.RadioButton WoodRadio;
         private System.Windows.Forms.RadioButton TrainRadio;
         private System.Windows.Forms.NumericUpDown nudCartsCount;
+        private System.Windows.Forms.Button btLeft;
+        private System.Windows.Forms.Button btRight;
+        private System.Windows.Forms.Label label1;
     }
 }
 
