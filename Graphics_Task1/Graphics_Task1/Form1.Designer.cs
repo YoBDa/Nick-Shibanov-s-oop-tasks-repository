@@ -28,65 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CoalRadio = new System.Windows.Forms.RadioButton();
-            this.SandRadio = new System.Windows.Forms.RadioButton();
-            this.WoodRadio = new System.Windows.Forms.RadioButton();
-            this.TrainRadio = new System.Windows.Forms.RadioButton();
             this.nudCartsCount = new System.Windows.Forms.NumericUpDown();
             this.btLeft = new System.Windows.Forms.Button();
             this.btRight = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btUp = new System.Windows.Forms.Button();
             this.btDown = new System.Windows.Forms.Button();
+            this.cbShapes = new System.Windows.Forms.ComboBox();
+            this.cbCarriages = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).BeginInit();
             this.SuspendLayout();
             // 
-            // CoalRadio
-            // 
-            this.CoalRadio.AutoSize = true;
-            this.CoalRadio.Location = new System.Drawing.Point(9, 12);
-            this.CoalRadio.Name = "CoalRadio";
-            this.CoalRadio.Size = new System.Drawing.Size(57, 21);
-            this.CoalRadio.TabIndex = 0;
-            this.CoalRadio.Text = "Coal";
-            this.CoalRadio.UseVisualStyleBackColor = true;
-            // 
-            // SandRadio
-            // 
-            this.SandRadio.AutoSize = true;
-            this.SandRadio.Location = new System.Drawing.Point(81, 12);
-            this.SandRadio.Name = "SandRadio";
-            this.SandRadio.Size = new System.Drawing.Size(62, 21);
-            this.SandRadio.TabIndex = 1;
-            this.SandRadio.Text = "Sand";
-            this.SandRadio.UseVisualStyleBackColor = true;
-            // 
-            // WoodRadio
-            // 
-            this.WoodRadio.AutoSize = true;
-            this.WoodRadio.Location = new System.Drawing.Point(153, 12);
-            this.WoodRadio.Name = "WoodRadio";
-            this.WoodRadio.Size = new System.Drawing.Size(66, 21);
-            this.WoodRadio.TabIndex = 2;
-            this.WoodRadio.Text = "Wood";
-            this.WoodRadio.UseVisualStyleBackColor = true;
-            // 
-            // TrainRadio
-            // 
-            this.TrainRadio.AutoSize = true;
-            this.TrainRadio.Checked = true;
-            this.TrainRadio.Location = new System.Drawing.Point(288, 11);
-            this.TrainRadio.Name = "TrainRadio";
-            this.TrainRadio.Size = new System.Drawing.Size(62, 21);
-            this.TrainRadio.TabIndex = 3;
-            this.TrainRadio.TabStop = true;
-            this.TrainRadio.Text = "Train";
-            this.TrainRadio.UseVisualStyleBackColor = true;
-            // 
             // nudCartsCount
             // 
-            this.nudCartsCount.Location = new System.Drawing.Point(225, 11);
+            this.nudCartsCount.Location = new System.Drawing.Point(136, 214);
             this.nudCartsCount.Maximum = new decimal(new int[] {
             10,
             0,
@@ -108,7 +63,7 @@
             // 
             // btLeft
             // 
-            this.btLeft.Location = new System.Drawing.Point(368, 12);
+            this.btLeft.Location = new System.Drawing.Point(26, 39);
             this.btLeft.Name = "btLeft";
             this.btLeft.Size = new System.Drawing.Size(46, 46);
             this.btLeft.TabIndex = 5;
@@ -118,7 +73,7 @@
             // 
             // btRight
             // 
-            this.btRight.Location = new System.Drawing.Point(472, 12);
+            this.btRight.Location = new System.Drawing.Point(130, 39);
             this.btRight.Name = "btRight";
             this.btRight.Size = new System.Drawing.Size(46, 46);
             this.btRight.TabIndex = 6;
@@ -126,27 +81,18 @@
             this.btRight.UseVisualStyleBackColor = true;
             this.btRight.Click += new System.EventHandler(this.Move_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(554, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(9, 39);
+            this.listBox1.Location = new System.Drawing.Point(9, 90);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 116);
+            this.listBox1.Size = new System.Drawing.Size(184, 116);
             this.listBox1.TabIndex = 8;
             // 
             // btUp
             // 
-            this.btUp.Location = new System.Drawing.Point(420, 12);
+            this.btUp.Location = new System.Drawing.Point(78, 39);
             this.btUp.Name = "btUp";
             this.btUp.Size = new System.Drawing.Size(46, 21);
             this.btUp.TabIndex = 9;
@@ -156,7 +102,7 @@
             // 
             // btDown
             // 
-            this.btDown.Location = new System.Drawing.Point(420, 37);
+            this.btDown.Location = new System.Drawing.Point(77, 64);
             this.btDown.Name = "btDown";
             this.btDown.Size = new System.Drawing.Size(46, 21);
             this.btDown.TabIndex = 10;
@@ -164,22 +110,39 @@
             this.btDown.UseVisualStyleBackColor = true;
             this.btDown.Click += new System.EventHandler(this.Move_Click);
             // 
+            // cbShapes
+            // 
+            this.cbShapes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbShapes.FormattingEnabled = true;
+            this.cbShapes.Location = new System.Drawing.Point(9, 9);
+            this.cbShapes.Name = "cbShapes";
+            this.cbShapes.Size = new System.Drawing.Size(184, 24);
+            this.cbShapes.TabIndex = 11;
+            this.cbShapes.SelectedIndexChanged += new System.EventHandler(this.cbShapes_SelectedIndexChanged);
+            // 
+            // cbCarriages
+            // 
+            this.cbCarriages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCarriages.FormattingEnabled = true;
+            this.cbCarriages.Location = new System.Drawing.Point(12, 212);
+            this.cbCarriages.Name = "cbCarriages";
+            this.cbCarriages.Size = new System.Drawing.Size(121, 24);
+            this.cbCarriages.TabIndex = 12;
+            this.cbCarriages.SelectedIndexChanged += new System.EventHandler(this.cbCarriages_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 506);
+            this.Controls.Add(this.cbCarriages);
+            this.Controls.Add(this.cbShapes);
             this.Controls.Add(this.btDown);
             this.Controls.Add(this.btUp);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btRight);
             this.Controls.Add(this.btLeft);
             this.Controls.Add(this.nudCartsCount);
-            this.Controls.Add(this.TrainRadio);
-            this.Controls.Add(this.WoodRadio);
-            this.Controls.Add(this.SandRadio);
-            this.Controls.Add(this.CoalRadio);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -187,23 +150,18 @@
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton CoalRadio;
-        private System.Windows.Forms.RadioButton SandRadio;
-        private System.Windows.Forms.RadioButton WoodRadio;
-        private System.Windows.Forms.RadioButton TrainRadio;
         private System.Windows.Forms.NumericUpDown nudCartsCount;
         private System.Windows.Forms.Button btLeft;
         private System.Windows.Forms.Button btRight;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btUp;
         private System.Windows.Forms.Button btDown;
+        private System.Windows.Forms.ComboBox cbShapes;
+        private System.Windows.Forms.ComboBox cbCarriages;
     }
 }
 

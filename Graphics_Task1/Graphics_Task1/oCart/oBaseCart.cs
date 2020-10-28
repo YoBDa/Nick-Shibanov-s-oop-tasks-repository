@@ -10,12 +10,13 @@ namespace Graphics_Task1
     public class oBaseCart : oShape
     {
         //  L/5 is the wheels size, L/2 is the cart height
-        
+
+        internal string Title = "NOTEXT";
         internal double WheelM = 5.0;
         internal oRectangle Body { get; set; }
         internal oCircle RWheel { get; set; }
         internal oCircle LWheel { get; set; }
-        internal static Color color = Color.Gray;
+        internal Color color = Color.Gray;
 
         public oBaseCart(int Size, Point Centre)
         {
@@ -36,7 +37,10 @@ namespace Graphics_Task1
         {
             Body.Draw(gr);
             RWheel.Draw(gr);
-            LWheel.Draw(gr);  
+            LWheel.Draw(gr);
+            Font f = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.SansSerif),
+                (float)Math.Pow(Math.Log(Size.X),1.7), FontStyle.Bold);
+            gr.DrawString(Title, f, Brushes.Black, this.Body.Centre);
         }
         public override void Move(Point To)
         {

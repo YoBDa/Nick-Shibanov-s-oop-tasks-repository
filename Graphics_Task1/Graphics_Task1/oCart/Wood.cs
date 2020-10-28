@@ -9,10 +9,10 @@ namespace Graphics_Task1.oCart
 {
     public class Wood : oBaseCart
     {
-        public static Wood CreateWood(int Size, Point Centre)
+        public Wood(Point Centre, int Size) : base(Size, Centre)
         {
-            oBaseCart.color = Color.BurlyWood;
-            return new Wood(Size, Centre);
+            Color = Color.SandyBrown;
+            Title = "Wood";
         }
         private Wood(int Size, Point Centre) : base(Size, Centre)
         {
@@ -26,8 +26,6 @@ namespace Graphics_Task1.oCart
             Point p1 = new Point(p4.X, p4.Y - 30);
             Point p2 = new Point(p3.X, p3.Y - 30);
             Point[] pts = { p1, p2, p3, p4 };
-            Font f = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.SansSerif), 20, FontStyle.Bold);
-            gr.DrawString("Wood", f, Brushes.Black, Centre);
             (new oRectangle(pts, Color.Brown)).Draw(gr);
         }
     }
