@@ -36,6 +36,9 @@
             this.btLeft = new System.Windows.Forms.Button();
             this.btRight = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btUp = new System.Windows.Forms.Button();
+            this.btDown = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,21 +110,21 @@
             // 
             this.btLeft.Location = new System.Drawing.Point(368, 12);
             this.btLeft.Name = "btLeft";
-            this.btLeft.Size = new System.Drawing.Size(75, 23);
+            this.btLeft.Size = new System.Drawing.Size(46, 46);
             this.btLeft.TabIndex = 5;
-            this.btLeft.Text = "<-";
+            this.btLeft.Text = "🡐";
             this.btLeft.UseVisualStyleBackColor = true;
-            this.btLeft.Click += new System.EventHandler(this.btLeft_Click);
+            this.btLeft.Click += new System.EventHandler(this.Move_Click);
             // 
             // btRight
             // 
-            this.btRight.Location = new System.Drawing.Point(449, 12);
+            this.btRight.Location = new System.Drawing.Point(472, 12);
             this.btRight.Name = "btRight";
-            this.btRight.Size = new System.Drawing.Size(75, 23);
+            this.btRight.Size = new System.Drawing.Size(46, 46);
             this.btRight.TabIndex = 6;
-            this.btRight.Text = "->";
+            this.btRight.Text = "🡒";
             this.btRight.UseVisualStyleBackColor = true;
-            this.btRight.Click += new System.EventHandler(this.btRight_Click);
+            this.btRight.Click += new System.EventHandler(this.Move_Click);
             // 
             // label1
             // 
@@ -132,11 +135,43 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "label1";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(9, 39);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(170, 116);
+            this.listBox1.TabIndex = 8;
+            // 
+            // btUp
+            // 
+            this.btUp.Location = new System.Drawing.Point(420, 12);
+            this.btUp.Name = "btUp";
+            this.btUp.Size = new System.Drawing.Size(46, 21);
+            this.btUp.TabIndex = 9;
+            this.btUp.Text = "🡑";
+            this.btUp.UseVisualStyleBackColor = true;
+            this.btUp.Click += new System.EventHandler(this.Move_Click);
+            // 
+            // btDown
+            // 
+            this.btDown.Location = new System.Drawing.Point(420, 37);
+            this.btDown.Name = "btDown";
+            this.btDown.Size = new System.Drawing.Size(46, 21);
+            this.btDown.TabIndex = 10;
+            this.btDown.Text = "🡓";
+            this.btDown.UseVisualStyleBackColor = true;
+            this.btDown.Click += new System.EventHandler(this.Move_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 506);
+            this.Controls.Add(this.btDown);
+            this.Controls.Add(this.btUp);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btRight);
             this.Controls.Add(this.btLeft);
@@ -148,8 +183,8 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,6 +201,9 @@
         private System.Windows.Forms.Button btLeft;
         private System.Windows.Forms.Button btRight;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btUp;
+        private System.Windows.Forms.Button btDown;
     }
 }
 

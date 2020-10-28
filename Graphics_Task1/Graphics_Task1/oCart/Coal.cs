@@ -18,7 +18,7 @@ namespace Graphics_Task1.oCart
         {
 
         }
-        public new void Draw(Graphics gr)
+        public override void Draw(Graphics gr)
         {
             base.Draw(gr);
             Point p1 = Body.Peaks[0];

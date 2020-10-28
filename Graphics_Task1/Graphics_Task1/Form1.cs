@@ -14,32 +14,36 @@ namespace Graphics_Task1
 {
     public partial class Form1 : Form
     {
-        oTrain Train;
+        
         public Form1()
         {
             InitializeComponent();
         }
 
+        private List<oShape> oShapes = new List<oShape>();
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             int Size = 150;
-            oBaseCart crt;
+            oShape s;
             Graphics gr = this.CreateGraphics();
             if (WoodRadio.Checked)
             {
-                crt = oCart.Wood.CreateWood(Size, new Point(e.X, e.Y));
-                ((oCart.Wood)crt).Draw(gr);
+                s = oCart.Wood.CreateWood(Size, new Point(e.X, e.Y));
+                s.Draw(gr);
+                oShapes.Add(s);
             }
 
             else if (CoalRadio.Checked)
             {
-                crt = oCart.Coal.CreateCoal(Size, new Point(e.X, e.Y));
-                ((oCart.Coal)crt).Draw(gr);
+                s = oCart.Coal.CreateCoal(Size, new Point(e.X, e.Y));
+                s.Draw(gr);
+                oShapes.Add(s);
             }
             else if (SandRadio.Checked)
             {
-                crt = oCart.Sand.CreateSand(Size, new Point(e.X, e.Y));
-                ((oCart.Sand)crt).Draw(gr);
+                s = oCart.Sand.CreateSand(Size, new Point(e.X, e.Y));
+                s.Draw(gr);
+                oShapes.Add(s);
             }
             else
             {
@@ -60,66 +64,54 @@ namespace Graphics_Task1
 
                     }
                 }
-                Train = new oTrain(carts, new Point(e.X, e.Y));
-                Train.Draw(gr);
+                s = new oTrain(carts, new Point(e.X, e.Y));
+                oShapes.Add(s);
+                s.Draw(gr);
             }
-
+            listBox1.Items.Add(listBox1.Items.Count + " " + s.GetType().ToString());
             
             
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
+      
 
-        }
-
-        private void btLeft_Click(object sender, EventArgs e)
+        private void Move_Click(object sender, EventArgs e)
         {
-            double startAccel = 0.1;//m/s^2
-            int V = 0;
-            int i = 0;
-            Graphics gr = this.CreateGraphics();
-            while (V > -10)
+            if (listBox1.SelectedIndex == -1) return;
+            int Id = listBox1.SelectedIndex;
+            string Direction = "none";
+            if (((Button)sender).Name == "btUp") Direction = "up";
+            if (((Button)sender).Name == "btDown") Direction = "down";
+            if (((Button)sender).Name == "btRight") Direction = "right";
+            if (((Button)sender).Name == "btLeft") Direction = "left";
+            switch (Direction)
             {
-                int preV = V;
-                int preX = Train.Centre.X;
-                int nextX = (int)(preX + (preV * i / 1000.0) - (startAccel * Math.Pow(i / 1000.0, 2) / 2.0));
-                V = (int)(preV - startAccel * i / 1000.0);
-                Train.Centre = new Point(nextX, Train.Centre.Y);
-                gr.Clear(Color.White);
-                Train.Draw(gr);
-                gr.DrawString(label1.Text, SystemFonts.DefaultFont, Brushes.Black, new Point(10, 30));
-                i += 100;
-                Thread.Sleep(100);
-                
-                label1.Text = $"V = {V};  X = {Train.Centre.X}";
+                case "up": 
+                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X, oShapes[Id].Centre.Y - 5));
+                    break;
+                case "down": 
+                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X, oShapes[Id].Centre.Y + 5));
+                    break;
+                case "right":
+                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X + 5, oShapes[Id].Centre.Y));
+                    break;
+                case "left":
+                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X - 5, oShapes[Id].Centre.Y));
+                    break;
             }
-            while (V < 0) 
-            {
-                int preV = V;
-                int preX = Train.Centre.X;
-                int nextX = (int)(preX + (preV * i / 1000.0) + (startAccel * Math.Pow(i / 1000.0, 2) / 2.0));
-                V = (int)(preV + startAccel * i / 1000.0);
-                Train.Centre = new Point(nextX, Train.Centre.Y);
-                gr.Clear(Color.White);
-                Train.Draw(gr);
-                gr.DrawString(label1.Text, SystemFonts.DefaultFont, Brushes.Black, new Point(10, 30));
-                i += 100;
-                Thread.Sleep(100);
-                label1.Text = $"V = {V};  X = {Train.Centre.X}";
-
-            }         
-            
+            this.OnPaint(new PaintEventArgs(this.CreateGraphics(), this.ClientRectangle));
         }
 
-        private void btRight_Click(object sender, EventArgs e)
+        
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
-            Train.Centre = new Point(Train.Centre.X + 5, Train.Centre.Y);
-            Graphics gr = this.CreateGraphics();
-            gr.Clear(Color.White);
-            Train.Draw(gr);
-
+            var gr = this.CreateGraphics();
+            gr.Clear(Color.FromKnownColor(KnownColor.Control));
+            foreach (oShape s in oShapes)
+            {   
+                s.Draw(gr);
+            }
         }
     }
 }

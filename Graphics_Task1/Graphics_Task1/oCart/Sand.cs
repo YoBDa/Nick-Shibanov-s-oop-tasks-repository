@@ -19,7 +19,7 @@ namespace Graphics_Task1.oCart
 
         }
        
-        public new void Draw(Graphics gr)
+        public override void Draw(Graphics gr)
         {
             base.Draw(gr);
             Point p1 = Body.Peaks[0];
@@ -30,6 +30,7 @@ namespace Graphics_Task1.oCart
             gr.DrawString("Sand", f, Brushes.Black, Centre);
             gr.FillPolygon(Brushes.DarkGoldenrod,pts);
         }
+        
         
     }
 }
