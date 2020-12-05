@@ -159,9 +159,9 @@ namespace Graphics_Task1
                 sfd.ShowDialog();
                 using (Stream stream = sfd.OpenFile())
                 {
-                    string json = oShapes[listBox1.SelectedIndex].Key.JsonSerialize(oShapes[listBox1.SelectedIndex].Value);
-                    byte[] data = Encoding.UTF8.GetBytes(json);
-                    stream.Write(data, 0, data.Length);
+                    //string json = oShapes[listBox1.SelectedIndex].Key.JsonSerialize(oShapes[listBox1.SelectedIndex].Value);
+                    //byte[] data = Encoding.UTF8.GetBytes(json);
+                  //  stream.Write(data, 0, data.Length);
                 }
 
             }

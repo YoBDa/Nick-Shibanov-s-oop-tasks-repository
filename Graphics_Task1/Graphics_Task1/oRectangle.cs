@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Text.Json;
 
+
 namespace Graphics_Task1
 {
     public class oRectangle : oShape
@@ -35,10 +36,7 @@ namespace Graphics_Task1
             Brush br = new SolidBrush(Color);
             gr.FillRectangle(br, Peaks[0].X, Peaks[0].Y, Size.X, Size.Y);   
         }
-        public override string JsonSerialize()
-        {
-            string json;
-        }
+       
 
     }
 }
