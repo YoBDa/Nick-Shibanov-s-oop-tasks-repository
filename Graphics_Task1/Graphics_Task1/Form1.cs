@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 
 namespace Graphics_Task1
@@ -28,7 +29,7 @@ namespace Graphics_Task1
             cbCarriages.Visible = false;
         }
 
-        private List<oShape> oShapes = new List<oShape>();
+        private oContainer oShapes = new oContainer();
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             Random rnd = new Random((int)DateTime.Now.Ticks);
@@ -46,26 +47,26 @@ namespace Graphics_Task1
             {
                 default: s = new oRectangle(new Point(e.X, e.Y), new Point(Size, Size / 2),clr);
                     s.Draw(gr);
-                    oShapes.Add(s);
+                    oShapes.Add(s,typeof(oRectangle));
                     break;
                 case "Circle":
                     s = new oCircle(new Point(e.X, e.Y), Size, clr);
                     s.Draw(gr);
-                    oShapes.Add(s);
+                    oShapes.Add(s, typeof(oCircle));
                     break;
                 case "Coal":
                     s = new oCart.Coal(new Point(e.X, e.Y), Size);
                     s.Draw(gr);
-                    oShapes.Add(s);
+                    oShapes.Add(s, typeof(oCart.Coal));
                     break;
                 case "Sand":
                     s = new oCart.Sand(new Point(e.X, e.Y), Size);
                     s.Draw(gr);
-                    oShapes.Add(s);
+                    oShapes.Add(s, typeof(oCart.Sand));
                     break;
                 case "Wood":
                     s = new oCart.Wood(new Point(e.X, e.Y), Size);
-                    oShapes.Add(s);
+                    oShapes.Add(s, typeof(oCart.Wood));
                     break;
                 case "Train":
                     oBaseCart[] carts = new oBaseCart[(int)nudCartsCount.Value];
@@ -86,7 +87,7 @@ namespace Graphics_Task1
                         }
                     }
                     s = new oTrain(carts, new Point(e.X, e.Y));
-                    oShapes.Add(s);
+                    oShapes.Add(s, typeof(oTrain));
                     s.Draw(gr);
                     break;
             }            
@@ -110,16 +111,16 @@ namespace Graphics_Task1
             switch (Direction)
             {
                 case "up": 
-                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X, oShapes[Id].Centre.Y - 5));
+                    oShapes[Id].Key.Move(new Point(oShapes[Id].Key.Centre.X, oShapes[Id].Key.Centre.Y - 5));
                     break;
                 case "down": 
-                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X, oShapes[Id].Centre.Y + 5));
+                    oShapes[Id].Key.Move(new Point(oShapes[Id].Key.Centre.X, oShapes[Id].Key.Centre.Y + 5));
                     break;
                 case "right":
-                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X + 5, oShapes[Id].Centre.Y));
+                    oShapes[Id].Key.Move(new Point(oShapes[Id].Key.Centre.X + 5, oShapes[Id].Key.Centre.Y));
                     break;
                 case "left":
-                    oShapes[Id].Move(new Point(oShapes[Id].Centre.X - 5, oShapes[Id].Centre.Y));
+                    oShapes[Id].Key.Move(new Point(oShapes[Id].Key.Centre.X - 5, oShapes[Id].Key.Centre.Y));
                     break;
             }
             this.OnPaint(new PaintEventArgs(this.CreateGraphics(), this.ClientRectangle));
@@ -147,6 +148,23 @@ namespace Graphics_Task1
         {
             if (cbCarriages.SelectedIndex == 3) nudCartsCount.Visible = true;
             else nudCartsCount.Visible = false;
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "*.json|json";
+                sfd.FileName = listBox1.SelectedItem.ToString();
+                sfd.ShowDialog();
+                using (Stream stream = sfd.OpenFile())
+                {
+                    string json = oShapes[listBox1.SelectedIndex].Key.JsonSerialize(oShapes[listBox1.SelectedIndex].Value);
+                    byte[] data = Encoding.UTF8.GetBytes(json);
+                    stream.Write(data, 0, data.Length);
+                }
+
+            }
         }
     }
 }

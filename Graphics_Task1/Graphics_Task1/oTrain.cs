@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Text.Json;
 
 namespace Graphics_Task1
 {
@@ -60,5 +61,18 @@ namespace Graphics_Task1
             
 
         }
+        public oBaseCart this[int index]
+        {
+            get
+            {
+                return Carts[index];
+            }
+            set
+            {
+                Carts[index] = value;
+
+            }
+        }
+       
     }
 }

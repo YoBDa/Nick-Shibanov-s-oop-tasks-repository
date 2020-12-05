@@ -36,6 +36,8 @@
             this.btDown = new System.Windows.Forms.Button();
             this.cbShapes = new System.Windows.Forms.ComboBox();
             this.cbCarriages = new System.Windows.Forms.ComboBox();
+            this.btLoad = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCartsCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +132,32 @@
             this.cbCarriages.TabIndex = 12;
             this.cbCarriages.SelectedIndexChanged += new System.EventHandler(this.cbCarriages_SelectedIndexChanged);
             // 
+            // btLoad
+            // 
+            this.btLoad.Location = new System.Drawing.Point(12, 242);
+            this.btLoad.Name = "btLoad";
+            this.btLoad.Size = new System.Drawing.Size(75, 23);
+            this.btLoad.TabIndex = 13;
+            this.btLoad.Text = "Load";
+            this.btLoad.UseVisualStyleBackColor = true;
+            // 
+            // btSave
+            // 
+            this.btSave.Location = new System.Drawing.Point(118, 242);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(75, 23);
+            this.btSave.TabIndex = 14;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 506);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.btLoad);
             this.Controls.Add(this.cbCarriages);
             this.Controls.Add(this.cbShapes);
             this.Controls.Add(this.btDown);
@@ -162,6 +185,8 @@
         private System.Windows.Forms.Button btDown;
         private System.Windows.Forms.ComboBox cbShapes;
         private System.Windows.Forms.ComboBox cbCarriages;
+        private System.Windows.Forms.Button btLoad;
+        private System.Windows.Forms.Button btSave;
     }
 }
 

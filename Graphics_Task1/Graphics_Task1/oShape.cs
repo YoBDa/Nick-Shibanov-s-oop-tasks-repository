@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Text.Json;
+
+
 
 namespace Graphics_Task1
 {
     abstract public class oShape
     {
         internal Exception EmptyPointFoundException = new Exception("Point has no any coordinates.");
+        []
         internal Point[] Peaks = new Point[4]; // All rectangle points (top left is [0])
         public Color Color { get; set; }
         private Point centre = new Point(0, 0);
@@ -45,5 +49,7 @@ namespace Graphics_Task1
         {
             this.Centre = To;
         }
+        abstract public string JsonSerialize();
+        abstract public oShape JsonDeserialize(string Json);
     }
 }
