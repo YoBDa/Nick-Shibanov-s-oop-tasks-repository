@@ -1,0 +1,4 @@
+﻿data[0] - command: (message, start)
+data[1] - from
+data[2] - message:what	start:0
+data[3] - message:to	start:0
